@@ -4,6 +4,7 @@
 [License]: https://img.shields.io/badge/License-MIT-blue
 [Status]: https://img.shields.io/badge/Status-experimental-yellow
 [Unit]: https://img.shields.io/badge/Unit-education-brightgreen
+[jParser]: https://github.com/GeorgyFirsov/jParser
 
 It is simple "decision-machine", that parses production rules and initial state as JSON and outputs a way of "thinking" of itself. 
 
@@ -21,7 +22,7 @@ machine.start()
 
 ### Dependencies
 
-This script uses my JSON-parser - jParser. It must be placed near `ExpertSystem` directory. `Utils` directories can be merged, but `settings.py` file should be taken from jParser!
+This script uses my JSON-parser - [jParser][]. It must be placed near `ExpertSystem` directory. `Utils` directories can be merged, but `settings.py` file should be taken from jParser!
 
 ### Example
 
