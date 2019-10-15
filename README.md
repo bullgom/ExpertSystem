@@ -30,36 +30,37 @@ Usage can be discovered on an example (`example.py` in this repo). All data you 
 
 Output of `example.py`:
 ```
-Initial state: ['допуск в лабораторию', 'свободные деньги', 'список литературы', 'удобное расписане', 'свободное время', 'желание учиться', 'факультативы']
+Initial state: ['Желание учиться', 'Общительность', 'Много денег', 'Много времени']
 
-Collision of [8, 9, 10, 11] rules
-Rule 10 used. Got: купить ноутбук
+Collision of [16, 18, 14, 15] rules
+Rule 16 used. Got: Подходящее окружение
 
-Collision of [4, 8, 9, 11] rules
-Rule 4 used. Got: заниматься дома
+Collision of [18, 14, 15] rules
+Rule 18 used. Got: Много знакомых
 
-Collision of [8, 9, 11] rules
-Rule 9 used. Got: получить книги в библиотеке
+Collision of [9, 14, 15] rules
+Rule 9 used. Got: Общение с опытными людьми
 
-Collision of [5, 8, 11] rules
-Rule 5 used. Got: читать необходимую литературу
+Collision of [14, 15] rules
+Rule 14 used. Got: Учёба в университете
 
-Collision of [2, 8, 11] rules
-Rule 2 used. Got: отличная теоретичекая база
+Collision of [15, 7, 10] rules
+Rule 15 used. Got: Саморазвитие
 
-Collision of [8, 11] rules
-Rule 8 used. Got: ходить в универ
+Collision of [8, 7, 10] rules
+Rule 8 used. Got: Прохождение курсов
 
-Collision of [7, 11] rules
-Rule 7 used. Got: выполненные лабы
+Collision of [7, 10] rules
+Rule 7 used. Got: Чтение нужных книг
 
-Rule 11 used. Got: посещать доп занятия
+Collision of [3, 10] rules
+Rule 3 used. Got: Хорошие знания теории
 
-Rule 6 used. Got: хорошие результаты за к/р
+Rule 10 used. Got: Выполнение заданий
 
-Rule 3 used. Got: отличная практическая база
+Rule 4 used. Got: Богатый опыт
 
-Rule 1 used. Got: успешная сдача экзамена
+Rule 1 used. Got: Прохождение собеседования
 
-Target "успешная сдача экзамена" reached
+Target "Прохождение собеседования" reached
 ```
