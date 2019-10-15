@@ -107,10 +107,8 @@ class Machine(object):
         if len(matched_rules) == 1:
             apply_rule(matched_rules[0])
         elif len(matched_rules) > 1:
-            print(
-                'Collision of {} rules'.format(sorted([rule.number for rule in matched_rules]))
-            )
             matched_rules.sort(key=lambda item: item.power, reverse=True)
+            print('Collision of {} rules'.format([rule.number for rule in matched_rules]))
             apply_rule(matched_rules[0])
         else:
             trace('Memory dump: {}'.format(list(self._memory)))
