@@ -41,7 +41,10 @@ class Machine(object):
 
             parsed_json = reader.parse(rules_json)
 
-            self._targets = set(parsed_json["data"][0])
+            if 'data' not in parsed_json.keys():
+                raise ValueError('Wrong JSON format')
+
+            self._targets = set(parsed_json['data'][0])
 
         with open(file_initial, 'r', encoding='utf-8') as file:
             initial_json = file.read()

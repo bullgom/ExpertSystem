@@ -12,8 +12,13 @@ from Utils.settings import initial_file, rules_file
 
 
 def main():
-    machine = Machine(rules_file, initial_file)
-    machine.start()
+    try:
+        machine = Machine(rules_file, initial_file)
+        machine.start()
+    except RuntimeError as error:
+        print(error)
+    except ValueError as error:
+        print(error)
 
 
 if __name__ == '__main__':

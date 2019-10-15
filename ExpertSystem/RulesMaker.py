@@ -22,10 +22,16 @@ class Rule(object):
     def __init__(self, raw_rule: dict) -> None:
         """Constructs rule from dict got from JSON.
         """
-        self._number = raw_rule["number"]
-        self._power = raw_rule["startPower"]
-        self._node = raw_rule["node"]
-        self._conditions = raw_rule["children"]
+        if 'number' not in raw_rule.keys() or \
+           'startPower' not in raw_rule.keys() or \
+           'node' not in raw_rule.keys() or \
+           'children' not in raw_rule.keys():
+            raise ValueError('Wrong JSON format')
+
+        self._number = raw_rule['number']
+        self._power = raw_rule['startPower']
+        self._node = raw_rule['node']
+        self._conditions = raw_rule['children']
 
     def __str__(self) -> str:
         representation = '[\tRule number {}. Power: {}\n\tIf all of {} are true, than: {}\n]'
@@ -67,7 +73,13 @@ class RuleMaker(object):
         reader = Reader()
         parsed_json = reader.parse(json)
 
-        self._rules = [Rule(rule) for rule in parsed_json["rules"]]
+        if parsed_json is None:
+            raise RuntimeError('Can not parse JSON')
+
+        if 'rules' not in parsed_json.keys():
+            raise ValueError('Wrong JSON format')
+
+        self._rules = [Rule(rule) for rule in parsed_json['rules']]
 
     @property
     def rules(self) -> list:
