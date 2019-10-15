@@ -110,7 +110,7 @@ class Machine(object):
             print(
                 'Collision of {} rules'.format(sorted([rule.number for rule in matched_rules]))
             )
-            matched_rules.sort(key=lambda item: item.power)
+            matched_rules.sort(key=lambda item: item.power, reverse=True)
             apply_rule(matched_rules[0])
         else:
             trace('Memory dump: {}'.format(list(self._memory)))
