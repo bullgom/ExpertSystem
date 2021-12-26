@@ -96,7 +96,7 @@ class Machine(object):
 
         matched_rules = []
 
-        for count in range(2, self._rules_handler.max_tuple + 1):
+        for count in range(1, self._rules_handler.max_tuple + 1):
             for tpl in combinations(self._memory, r=count):
                 for rule in self._rules_handler.rules:
                     match_conditions = any(
@@ -109,10 +109,12 @@ class Machine(object):
 
         if len(matched_rules) == 1:
             apply_rule(matched_rules[0])
+            
         elif len(matched_rules) > 1:
             matched_rules.sort(key=lambda item: item.power, reverse=True)
             print('Collision of {} rules'.format([rule.number for rule in matched_rules]))
             apply_rule(matched_rules[0])
+            
         else:
             trace('Memory dump: {}'.format(list(self._memory)))
             raise ValueError("No production found")
